@@ -1,0 +1,25 @@
+public class Main2{
+	
+	private static int[] nums = new int[] {2,4,6,3,5,1};
+	
+	public static void main(String[] args) {
+		Main2 test = new Main2();
+		test.bubbleSort(nums);
+		test.printNums(nums);
+	}
+	
+	// √∞≈›≈≈–Ú”≈ªØ∞Ê
+	public void bubbleSort(int[] nums) {
+		if(nums == null || nums.length == 0) return;
+		int len = nums.length;
+	}
+	
+	public void printNums(int[] nums) {
+		if(nums == null || nums.length==0) return;
+		int len = nums.length;
+		for(int i=0;i<len-1;i++) {
+			System.out.print(nums[i]+",");
+		}
+		System.out.println(nums[len-1]);
+	}
+}

@@ -1,0 +1,23 @@
+public class Main7{
+	
+	private static int[] nums = new int[] {2,4,6,3,0,5,1,9,10,8,0,-1};
+	
+	public static void main(String[] args) {
+		Main7 test = new Main7();
+		test.quickSort(nums);
+		test.printNums(nums);
+	}
+	
+	public void quickSort(int[] nums) {
+		if(nums == null || nums.length == 0) return;
+	}
+	
+	public void printNums(int[] nums) {
+		if(nums == null || nums.length==0) return;
+		int len = nums.length;
+		for(int i=0;i<len-1;i++) {
+			System.out.print(nums[i]+",");
+		}
+		System.out.println(nums[len-1]);
+	}
+}

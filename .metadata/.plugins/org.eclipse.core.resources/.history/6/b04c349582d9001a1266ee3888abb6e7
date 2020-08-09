@@ -1,0 +1,59 @@
+public class Main6{
+	
+	private static int[] nums = new int[] {2,4,6,3,0,5,1,9,10,8,0,-1};
+	
+	public static void main(String[] args) {
+		Main6 test = new Main6();
+		test.heapSort(nums);
+		test.printNums(nums);
+	}
+	
+	// 堆排序
+	/*
+	 * arr[n]的左节点为arr[2*n+1]，右节点为arr[2*n+2]
+	 * arr[n]的父节点为arr[(n-1)/2]
+	 */
+	public void heapSort(int[] nums) {
+		if(nums == null || nums.length == 0) return;
+		int N = nums.length-1;	// 长度对应数组的索引
+		for(int i=N/2; i>=0; i--) {
+			sink(nums, i, N);
+		}
+		
+		while(N>0) {
+			swap(nums, 1, N--);
+			sink(nums, 1, N);
+		}
+	}
+	
+	// 元素下沉
+	private void sink(int[] nums, int idx, int N) {
+//		int left = 2*idx+1;
+		while(2*idx+1 <= N) {
+			int left = 2*idx+1;
+			if(left<N && nums[left]<nums[left+1]) {
+				left++;
+			}
+			if(nums[idx]>=nums[left]) {
+				break;
+			}
+			swap(nums, idx, left);
+			idx = left;
+		}
+	}
+	
+	private void swap(int[] nums, int i, int j) {
+		int tmp = nums[i];
+		nums[i] = nums[j];
+		nums[j] = tmp;
+	}
+	
+	public void printNums(int[] nums) {
+		if(nums == null || nums.length==0) return;
+		int len = nums.length;
+		for(int i=0;i<len-1;i++) {
+			System.out.print(nums[i]+",");
+		}
+		System.out.println(nums[len-1]);
+	}
+}

@@ -1,0 +1,8 @@
+public class Main5{
+	
+	private static int[] nums = new int[] {2,4,6,3,0,5,1,9,10,8,0,-1};
+	
+	public static void main(String[] args) {
+		
+	}
+}
